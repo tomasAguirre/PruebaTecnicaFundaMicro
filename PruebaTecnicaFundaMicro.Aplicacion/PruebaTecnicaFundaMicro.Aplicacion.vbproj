@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>PruebaTecnicaFundaMicro.Aplicacion</RootNamespace>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\PruebaTecnicaFundaMicro.Dominio.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+  </ItemGroup>
+
+</Project>
