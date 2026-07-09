@@ -120,5 +120,8 @@
       <Name>PruebaTecnicaFundaMicro_Dominio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ScriptBaseDatos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
