@@ -10,6 +10,7 @@ Public Class HomeController
     Private ReadOnly _repositorioCliente As IRepositorioCliente
     Private ReadOnly _repositorioBitacora As IRepositorioBitacora
     Private ReadOnly usuario As Usuario
+    Private ReadOnly accion As Accion
 
     ' Constructor 
     Public Sub New()
@@ -39,7 +40,7 @@ Public Class HomeController
         Return View()
     End Function
 
-    Function recieveData(fc As FormCollection) As ActionResult
+    Function CrearCliente(fc As FormCollection) As ActionResult
         Dim nombre As String = fc("nombre")
         Dim telefono As String = fc("telefono")
         Dim direccion As String = fc("direccion")
@@ -47,7 +48,7 @@ Public Class HomeController
 
         Dim id = _mediador.Send(comandoCrearCliente).Result
         Dim usuario As Usuario = DirectCast(Session("UsuarioLogeado"), Usuario)
-        Dim comandoCrearBitacora As New ComandoCrearBitacora("Insertar", id, DateTime.UtcNow, usuario.Nombre)
+        Dim comandoCrearBitacora As New ComandoCrearBitacora(Accion.Agregar.ToString(), id, DateTime.UtcNow, usuario.Nombre)
         _mediador.Send(comandoCrearBitacora)
         Return RedirectToAction("Index")
     End Function
@@ -58,7 +59,7 @@ Public Class HomeController
         _mediador.Send(comandoEliminarCliente)
 
         Dim usuario As Usuario = DirectCast(Session("UsuarioLogeado"), Usuario)
-        Dim comandoCrearBitacora As New ComandoCrearBitacora("Eliminar", id, DateTime.UtcNow, usuario.Nombre)
+        Dim comandoCrearBitacora As New ComandoCrearBitacora(Accion.Eliminar.ToString(), id, DateTime.UtcNow, usuario.Nombre)
         _mediador.Send(comandoCrearBitacora)
         Return RedirectToAction("Index")
     End Function
@@ -83,7 +84,7 @@ Public Class HomeController
             _mediador.Send(New ComandoActualizarCliente(cliente.Id, cliente.Nombre, cliente.Telefono, cliente.Direccion))
 
             Dim usuario As Usuario = DirectCast(Session("UsuarioLogeado"), Usuario)
-            Dim comandoCrearBitacora As New ComandoCrearBitacora("Actualizar", cliente.Id, DateTime.UtcNow, usuario.Nombre)
+            Dim comandoCrearBitacora As New ComandoCrearBitacora(Accion.Editar.ToString(), cliente.Id, DateTime.UtcNow, usuario.Nombre)
             _mediador.Send(comandoCrearBitacora)
             Return RedirectToAction("Index")
         End If

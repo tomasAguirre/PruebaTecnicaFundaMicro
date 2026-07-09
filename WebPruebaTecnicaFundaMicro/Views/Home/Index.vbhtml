@@ -44,7 +44,7 @@ End Code
         <div>
 
             <h2>Crear Cliente</h2>
-            <form method="post" id="myform" action="/Home/recieveData">
+            <form method="post" id="myform" action="/Home/CrearCliente">
                 <div class="form-group">
                     <label for="Nombre">Nombre del Cliente:</label>
                     <input type="text" id="Nombre" name="Nombre" class="form-control" required />
