@@ -12,6 +12,13 @@
         _correo = correo
     End Sub
 
+    Public Sub New(id As Integer, nombre As String, correo As String)
+        _id = id
+        _nombre = nombre
+        _password = Password
+        _correo = correo
+    End Sub
+
     ' Propiedades con Get y Set
     Public Property Id As Integer
         Get
