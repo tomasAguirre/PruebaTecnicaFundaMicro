@@ -24,7 +24,7 @@ Public Class HomeController
     End Function
 
     Function About() As ActionResult
-        ViewData("Message") = "Your application description page."
+        ViewData("Message") = "app de prueba de fundamicro."
 
         Return View()
     End Function
@@ -73,9 +73,4 @@ Public Class HomeController
         Return View(cliente)
     End Function
 
-    Function Contact() As ActionResult
-        ViewData("Message") = "Your contact page."
-
-        Return View()
-    End Function
 End Class

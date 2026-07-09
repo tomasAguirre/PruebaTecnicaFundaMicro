@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Factories\FactoryMediator\FactoryMediator.vb" />
     <Compile Include="Factories\FactoryRepositorio\FactoryRepositorios.vb" />
     <Compile Include="Global.asax.vb">
@@ -243,6 +244,7 @@
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
     <Content Include="Views\Home\Edit.vbhtml" />
+    <Content Include="Views\Login\Login.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
