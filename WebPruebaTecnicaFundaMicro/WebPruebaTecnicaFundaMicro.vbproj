@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Controllers\BitacoraController.vb" />
     <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Factories\FactoryMediator\FactoryMediator.vb" />
     <Compile Include="Factories\FactoryRepositorio\FactoryRepositorios.vb" />
@@ -245,6 +246,7 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
     <Content Include="Views\Home\Edit.vbhtml" />
     <Content Include="Views\Login\Login.vbhtml" />
+    <Content Include="Views\Bitacora\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

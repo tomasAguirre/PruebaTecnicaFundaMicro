@@ -72,6 +72,8 @@
   <ItemGroup>
     <Compile Include="CasosDeUso\Bitacora\Comandos\CrearBitacora\CasoDeUsoCrearBitacora.vb" />
     <Compile Include="CasosDeUso\Bitacora\Comandos\CrearBitacora\ComandoCrearBitacora.vb" />
+    <Compile Include="CasosDeUso\Bitacora\Consultas\ObtenerBitacoras\CasoDeUsoObtenerBitacoras.vb" />
+    <Compile Include="CasosDeUso\Bitacora\Consultas\ObtenerBitacoras\ConsultaObtenerBitacoras.vb" />
     <Compile Include="CasosDeUso\Cliente\Comandos\ActualizarCliente\CasoDeUsoActualizarCliente.vb" />
     <Compile Include="CasosDeUso\Cliente\Comandos\ActualizarCliente\ComandoActualizarCliente.vb" />
     <Compile Include="CasosDeUso\Cliente\Comandos\CrearCliente\CasoDeUsoCrearCliente.vb" />
