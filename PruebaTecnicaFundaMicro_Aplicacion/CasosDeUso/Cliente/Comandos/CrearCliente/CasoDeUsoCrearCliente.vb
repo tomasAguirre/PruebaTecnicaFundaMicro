@@ -12,13 +12,14 @@ Public Class CasoDeUsoCrearCliente
     End Sub
 
     Public Function Handle(request As ComandoCrearCliente) As Task(Of Integer) Implements IRequestHandler(Of ComandoCrearCliente, Integer).Handle
+        Dim id As Integer
         Try
             Dim cliente As New Cliente()
             cliente.Nombre = request.Nombre
             cliente.Telefono = request.Telefono
             cliente.Direccion = request.Direccion
-            repositorio.Insertar(cliente)
-            Return Task.FromResult(cliente.Id)
+            id = repositorio.Insertar(cliente)
+            Return Task.FromResult(id)
         Catch ex As Exception
             Throw New Exception("Error al crear el cliente: " & ex.Message)
         End Try

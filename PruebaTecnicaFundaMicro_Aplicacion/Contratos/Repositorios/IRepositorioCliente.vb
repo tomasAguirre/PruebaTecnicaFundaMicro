@@ -3,7 +3,7 @@ Imports PruebaTecnicaFundaMicro_Dominio
 
 Public Interface IRepositorioCliente
     Function ObtenerTodos() As List(Of Cliente)
-    Sub Insertar(cliente As Cliente)
+    Function Insertar(cliente As Cliente) As Integer
     Sub Actualizar(cliente As Cliente)
     Sub Eliminar(id As Integer)
 

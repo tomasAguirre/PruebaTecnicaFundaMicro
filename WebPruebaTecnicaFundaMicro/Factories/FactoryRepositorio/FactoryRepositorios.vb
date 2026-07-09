@@ -10,4 +10,8 @@ Public Class FactoryRepositorios
     Public Function ObtenerRepositorioUsuario() As RepositorioUsuario
         Return New RepositorioUsuario()
     End Function
+
+    Public Function ObtenerRepositorioBitacora() As RepositorioBitacora
+        Return New RepositorioBitacora()
+    End Function
 End Class

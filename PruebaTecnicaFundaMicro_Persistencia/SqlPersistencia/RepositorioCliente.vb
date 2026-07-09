@@ -25,22 +25,6 @@ Namespace PruebaTecnicaFundaMicroPersistencia.SqlPersistencia
             End Using
         End Sub
 
-        Public Sub Insertar(cliente As Cliente) Implements IRepositorioCliente.Insertar
-            Using conn As SqlConnection = ObtenerConexion()
-                conn.Open()
-
-                Dim query As String = "INSERT INTO Cliente (Nombre, Telefono, Direccion) 
-                                   VALUES (@Nombre, @Telefono, @Direccion)"
-
-                Using cmd As New SqlCommand(query, conn)
-                    cmd.Parameters.Add("@Nombre", SqlDbType.NVarChar, 100).Value = cliente.Nombre
-                    cmd.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = cliente.Telefono
-                    cmd.Parameters.Add("@Direccion", SqlDbType.NVarChar, 200).Value = cliente.Direccion
-
-                    cmd.ExecuteNonQuery()
-                End Using
-            End Using
-        End Sub
 
         Public Sub Actualizar(cliente As Cliente) Implements IRepositorioCliente.Actualizar
             Using conn As SqlConnection = ObtenerConexion()
@@ -112,5 +96,24 @@ Namespace PruebaTecnicaFundaMicroPersistencia.SqlPersistencia
             Return cliente
         End Function
 
+        Public Function Insertar(cliente As Cliente) As Integer Implements IRepositorioCliente.Insertar
+            Dim nuevoId As Integer
+            Using conn As SqlConnection = ObtenerConexion()
+                conn.Open()
+
+                Dim query As String = "INSERT INTO Cliente (Nombre, Telefono, Direccion) 
+                                       VALUES (@Nombre, @Telefono, @Direccion);
+                                       SELECT SCOPE_IDENTITY();"
+
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.Add("@Nombre", SqlDbType.NVarChar, 100).Value = cliente.Nombre
+                    cmd.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = cliente.Telefono
+                    cmd.Parameters.Add("@Direccion", SqlDbType.NVarChar, 200).Value = cliente.Direccion
+
+                    nuevoId = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+            End Using
+            Return nuevoId
+        End Function
     End Class
 End Namespace

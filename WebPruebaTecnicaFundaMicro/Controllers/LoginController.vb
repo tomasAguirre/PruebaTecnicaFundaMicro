@@ -16,6 +16,8 @@ Namespace Controllers
             Dim _FactoryRepositorio = New FactoryRepositorios()
             _mediador = FactoryMediator.ObtenerMediatorSimple()
             _repositorioUsuario = _FactoryRepositorio.ObtenerRepositorioUsuario()
+
+            _mediador.RegistrarHandler(New CasoDeUsoBuscarPorPasswordYCorreo(_repositorioUsuario))
         End Sub
 
         ' GET: Login
@@ -30,7 +32,6 @@ Namespace Controllers
             Try
                 Dim Password As String = collection("Password")
                 Dim Correo As String = collection("Correo")
-                _mediador.RegistrarHandler(New CasoDeUsoBuscarPorPasswordYCorreo(_repositorioUsuario))
                 Dim usuario As Usuario = _mediador.Send(New ConsultaBuscarPorPasswordYCorreo(Password, Correo)).Result
 
                 If usuario IsNot Nothing Then

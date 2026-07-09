@@ -1,33 +1,26 @@
-﻿Public Class Bitacora
-    ' Campos privados
-    Private _id As Integer
+﻿Imports System.Security.Cryptography
+Imports PruebaTecnicaFundaMicro_Aplicacion.PruebaTecnicaFundaMicro_Aplicacion.Utilidades.Mediador
+
+Public Class ComandoCrearBitacora
+    Implements IRequest(Of Integer)
+
     Private _accionRealizada As String
     Private _idCliente As Integer
     Private _fecha As DateTime
     Private _nombreUsuario As String
 
-    Public Sub New()
-
-    End Sub
-
-    ' Constructor opcional
-    Public Sub New(id As Integer, accionRealizada As String, idCliente As Integer, fecha As DateTime, nombreUsuario As String)
-        _id = id
+    Public Sub New(accionRealizada As String, idCliente As Integer, fecha As DateTime, nombreUsuario As String)
         _accionRealizada = accionRealizada
         _idCliente = idCliente
         _fecha = fecha
         _nombreUsuario = nombreUsuario
     End Sub
 
+    Public Sub New()
+
+    End Sub
+
     ' Propiedades con Get y Set
-    Public Property Id As Integer
-        Get
-            Return _id
-        End Get
-        Set(value As Integer)
-            _id = value
-        End Set
-    End Property
 
     Public Property AccionRealizada As String
         Get
@@ -64,5 +57,5 @@
             _nombreUsuario = value
         End Set
     End Property
-End Class
 
+End Class
