@@ -13,17 +13,17 @@
 
         <div class="form-group">
             @Html.LabelFor(Function(m) m.Nombre)
-            @Html.TextBoxFor(Function(m) m.Nombre, New With {.class = "form-control"})
+            @Html.TextBoxFor(Function(m) m.Nombre, New With {.class = "form-control", .required = "required", .maxlength = "50"})
         </div>
 
         <div class="form-group">
             @Html.LabelFor(Function(m) m.Direccion)
-            @Html.TextBoxFor(Function(m) m.Direccion, New With {.class = "form-control"})
+            @Html.TextBoxFor(Function(m) m.Direccion, New With {.class = "form-control", .required = "required", .maxlength = "50"})
         </div>
 
         <div class="form-group">
             @Html.LabelFor(Function(m) m.Telefono)
-            @Html.TextBoxFor(Function(m) m.Telefono, New With {.class = "form-control"})
+            @Html.TextBoxFor(Function(m) m.Telefono, New With {.class = "form-control", .required = "required", .maxlength = "10"})
         </div>
 
         <button type="submit" class="btn btn-primary">Actualizar</button>

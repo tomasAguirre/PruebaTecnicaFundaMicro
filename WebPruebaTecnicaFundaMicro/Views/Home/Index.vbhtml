@@ -47,17 +47,17 @@ End Code
             <form method="post" id="myform" action="/Home/CrearCliente">
                 <div class="form-group">
                     <label for="Nombre">Nombre del Cliente:</label>
-                    <input type="text" id="Nombre" name="Nombre" class="form-control" required />
+                    <input type="text" id="Nombre" name="Nombre" class="form-control" required maxlength="50"/>
                 </div>
 
                 <div class="form-group">
                     <label for="Direccion">Dirección:</label>
-                    <input type="text" id="Direccion" name="Direccion" class="form-control" required />
+                    <input type="text" id="Direccion" name="Direccion" class="form-control" required maxlength="50" />
                 </div>
 
                 <div class="form-group">
                     <label for="Telefono">Teléfono:</label>
-                    <input type="text" id="Telefono" name="Telefono" class="form-control" required />
+                    <input type="text" id="Telefono" name="Telefono" class="form-control" required maxlength="10" />
                 </div>
 
                 <br />
