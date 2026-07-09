@@ -1,20 +1,15 @@
-﻿Public Class Usuario
-    Private _id As Integer
+﻿Imports PruebaTecnicaFundaMicro_Aplicacion.PruebaTecnicaFundaMicro_Aplicacion.Utilidades.Mediador
+
+Public Class ComandoCrearUsuario
+    Implements IRequest(Of Integer)
+
     Private _nombre As String
     Private _password As String
     Private _correo As String
 
-    ' Constructor opcional
-    Public Sub New(id As Integer, nombre As String, password As String, correo As String)
-        _id = id
+    Public Sub New(nombre As String, password As String, correo As String)
         _nombre = nombre
         _password = password
-        _correo = correo
-    End Sub
-
-    Public Sub New(id As Integer, nombre As String, correo As String)
-        _id = id
-        _nombre = nombre
         _correo = correo
     End Sub
 
@@ -23,14 +18,6 @@
     End Sub
 
     ' Propiedades con Get y Set
-    Public Property Id As Integer
-        Get
-            Return _id
-        End Get
-        Set(value As Integer)
-            _id = value
-        End Set
-    End Property
 
     Public Property Nombre As String
         Get
@@ -59,4 +46,3 @@
         End Set
     End Property
 End Class
-

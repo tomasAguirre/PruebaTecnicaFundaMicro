@@ -20,6 +20,13 @@ Namespace Controllers
             _mediador.RegistrarHandler(New CasoDeUsoBuscarPorPasswordYCorreo(_repositorioUsuario))
         End Sub
 
+        Function Index() As ActionResult
+            ' Limpiar la sesión al entrar al login
+            Session("UsuarioLogeado") = Nothing
+
+            Return View()
+        End Function
+
         ' GET: Login
         Function Login() As ActionResult
             Return View()

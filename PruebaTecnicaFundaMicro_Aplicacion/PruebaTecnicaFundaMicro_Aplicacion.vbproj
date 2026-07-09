@@ -85,6 +85,8 @@
     <Compile Include="CasosDeUso\Cliente\Consultas\ObtenerClientes\CasoDeUsoObtenerClientes.vb" />
     <Compile Include="CasosDeUso\Cliente\Consultas\ObtenerClientes\ClientesDetalleDTO.vb" />
     <Compile Include="CasosDeUso\Cliente\Consultas\ObtenerClientes\ConsultaObtenerClientes.vb" />
+    <Compile Include="CasosDeUso\Usuario\Comandos\CrearUsuario\CasoDeUsoCrearUsuario.vb" />
+    <Compile Include="CasosDeUso\Usuario\Comandos\CrearUsuario\ComandoCrearUsuario.vb" />
     <Compile Include="CasosDeUso\Usuario\Consultas\BuscarPorPasswordYCorreo\CasoDeUsoBuscarPorPasswordYCorreo.vb" />
     <Compile Include="CasosDeUso\Usuario\Consultas\BuscarPorPasswordYCorreo\ConsultaBuscarPorPasswordYCorreo.vb" />
     <Compile Include="Contratos\Repositorios\IRepositorioBitacora.vb" />

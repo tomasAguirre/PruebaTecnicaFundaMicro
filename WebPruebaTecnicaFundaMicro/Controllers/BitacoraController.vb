@@ -21,6 +21,10 @@ Namespace Controllers
 
         ' GET: Bitacora
         Function Index() As ActionResult
+            If Session("UsuarioLogeado") Is Nothing Then
+                Return RedirectToAction("Login", "Login")
+            End If
+
             Dim bitacoras = _mediator.Send(New ConsultaObtenerBitacoras).Result
             Return View(bitacoras)
         End Function

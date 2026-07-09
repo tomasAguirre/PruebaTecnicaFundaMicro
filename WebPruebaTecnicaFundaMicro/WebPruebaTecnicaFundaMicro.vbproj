@@ -152,6 +152,7 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="Controllers\BitacoraController.vb" />
     <Compile Include="Controllers\LoginController.vb" />
+    <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Factories\FactoryMediator\FactoryMediator.vb" />
     <Compile Include="Factories\FactoryRepositorio\FactoryRepositorios.vb" />
     <Compile Include="Global.asax.vb">
@@ -247,6 +248,7 @@
     <Content Include="Views\Home\Edit.vbhtml" />
     <Content Include="Views\Login\Login.vbhtml" />
     <Content Include="Views\Bitacora\Index.vbhtml" />
+    <Content Include="Views\Usuario\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

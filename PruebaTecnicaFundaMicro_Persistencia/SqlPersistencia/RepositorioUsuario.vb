@@ -49,4 +49,33 @@ Public Class RepositorioUsuario
 
         Return usuarioEncontrado
     End Function
+
+    Public Function InsertarUsuario(usuario As Usuario) As Integer Implements IRepositorioUsuario.InsertarUsuario
+        Dim nuevoId As Integer
+        Using conn As SqlConnection = ObtenerConexion()
+            conn.Open()
+
+            Dim query As String = "INSERT INTO Usuario (Nombre, Password, Correo) 
+                               VALUES (@Nombre, @Password, @Correo);
+                               SELECT SCOPE_IDENTITY();"
+
+            Using cmd As New SqlCommand(query, conn)
+                ' Generar el hash SHA256 de la contraseña
+                Dim passwordHash As Byte() = HashPassword(usuario.Password)
+
+                ' Parámetros
+                cmd.Parameters.Add("@Nombre", SqlDbType.NVarChar, 100).Value = usuario.Nombre
+                cmd.Parameters.Add("@Correo", SqlDbType.NVarChar, 100).Value = usuario.Correo
+                cmd.Parameters.Add("@Password", SqlDbType.VarBinary, 32).Value = passwordHash
+
+                ' Ejecutar y obtener el Id generado
+                nuevoId = Convert.ToInt32(cmd.ExecuteScalar())
+
+                ' Asignar el Id al objeto usuario
+                usuario.Id = nuevoId
+            End Using
+        End Using
+        Return nuevoId
+    End Function
+
 End Class
