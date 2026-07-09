@@ -48,7 +48,7 @@ Public Class HomeController
         Dim nombre As String = fc("nombre")
         Dim telefono As String = fc("telefono")
         Dim direccion As String = fc("direccion")
-        Dim comandoCrearCliente As ComandoCrearUsuario = New ComandoCrearUsuario(nombre, telefono, direccion)
+        Dim comandoCrearCliente As ComandoCrearCliente = New ComandoCrearCliente(nombre, telefono, direccion)
 
         Dim id = _mediador.Send(comandoCrearCliente).Result
         Dim usuario As Usuario = DirectCast(Session("UsuarioLogeado"), Usuario)
